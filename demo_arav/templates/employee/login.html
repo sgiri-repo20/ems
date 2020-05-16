@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<p style="color:red">{{ error }}</p>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" />
+    <input type="password" name="password" />
+    <button type="submit">Submit</button>
+</form>
+{% endblock content%}

@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h1>List of {{ title }}</h1>
+{% if questions %}
+    <ul>
+        {% for ques in questions %}
+            <li><a href="{% url 'post_details' ques.id %}">{{ ques.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+<h1>Ther is no question available</h1>
+{% endif %}
+{% endblock content %}
